@@ -33,6 +33,13 @@ public class FloatingWindow extends IntentService {
 
     @Override
     protected void onHandleIntent(Intent intent) {
+            Intent intent2=new Intent(this,MainActivity.class);
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        startActivity(intent2);
 
     }
 
@@ -69,6 +76,8 @@ public class FloatingWindow extends IntentService {
             public void onClick(View v) {
                 wm.removeView(mFloatingView);
                 stopSelf();
+                Intent intent2=new Intent(FloatingWindow.this,MainActivity.class);
+                startActivity(intent2);
                 System.exit(0);
             }
         });
