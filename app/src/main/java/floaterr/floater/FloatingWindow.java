@@ -39,6 +39,7 @@ public class FloatingWindow extends IntentService {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        stopSelf();
         startActivity(intent2);
 
     }
@@ -67,7 +68,7 @@ public class FloatingWindow extends IntentService {
             @Override
             public void onClick(View view) {
                 b2.setText("Hello");
-                startService(new Intent(FloatingWindow.this,FloatingWindow2.class));
+
             }
         });
 
