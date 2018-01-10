@@ -41,6 +41,8 @@ public class FloatingWindow extends IntentService {
         }
         stopSelf();
         startActivity(intent2);
+        System.exit(0);
+
 
     }
 
@@ -50,8 +52,8 @@ public class FloatingWindow extends IntentService {
         super.onCreate();
         wm = (WindowManager) getSystemService(WINDOW_SERVICE);
         final WindowManager.LayoutParams parameters = new WindowManager.LayoutParams(
-                LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.TYPE_PHONE,
-                WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
+                LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT, LayoutParams.TYPE_PHONE,
+                LayoutParams.FLAG_NOT_TOUCH_MODAL,
                 PixelFormat.TRANSLUCENT);
         parameters.gravity = Gravity.CENTER | Gravity.CENTER;
         parameters.x = 0;
